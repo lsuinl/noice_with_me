@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:notice_with_me/screen/agree_screen.dart';
-import 'package:notice_with_me/screen/delete_user_screen.dart';
+import 'package:notice_with_me/screen/user/screen/agree_screen.dart';
 import 'package:notice_with_me/screen/home_screen.dart';
-import 'package:notice_with_me/screen/lodding_screen.dart';
-import 'package:notice_with_me/screen/login_screen.dart';
-import 'package:notice_with_me/screen/register.dart';
-import 'package:notice_with_me/screen/user_information_screen.dart';
+import 'package:notice_with_me/screen/user/screen/lodding_screen.dart';
+import 'package:notice_with_me/screen/user/screen/login_screen.dart';
+import 'package:notice_with_me/screen/user/screen/register.dart';
+import 'package:notice_with_me/screen/perform/user_information_screen.dart';
 
 class moving extends StatelessWidget {
   const moving({Key? key}) : super(key: key);
@@ -34,10 +33,6 @@ class moving extends StatelessWidget {
               onPressed: () => Navigator.push(context,
                   MaterialPageRoute(builder: (context) => RegisterScreen())),
               child: Text("회원가입")),
-          ElevatedButton(
-              onPressed: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => DeleteUserScreen())),
-              child: Text("회원삭제")),
           ElevatedButton(
               onPressed: () => Navigator.push(context,
                   MaterialPageRoute(builder: (context) => UserInformationScreen())),
