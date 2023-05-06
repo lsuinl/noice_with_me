@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:notice_with_me/screen/home_mainbutton.dart';
 
 import 'every/css.dart';
 
@@ -103,94 +104,16 @@ class HomeScreen extends StatelessWidget {
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Container(
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(15)),
-                  border: Border.all(width: 2, color: Colors.black12)),
-              height: 100.h,
-              width: 160.w,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image.asset(
-                    "asset/image/logo.png",
-                    height: 60.h,
-                  ),
-                  Text(
-                    "질문함",
-                    style: TextStyle(fontSize: 20.sp),
-                  )
-                ],
-              )),
-          Container(
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(15)),
-                  border: Border.all(width: 2, color: Colors.black12)),
-              height: 100.h,
-              width: 160.w,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image.asset(
-                    "asset/image/logo.png",
-                    height: 60.h,
-                  ),
-                  Text(
-                    "도장판",
-                    style: TextStyle(fontSize: 20.sp),
-                  )
-                ],
-              ))
+          MainButton(buttontext: "질문함"),
+          MainButton(buttontext: "도장판"),
         ],
       ),
-      SizedBox(
-        height: 20.h,
-      ),
+      SizedBox(height: 20.h),
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Container(
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(15)),
-                  border: Border.all(width: 2, color: Colors.black12)),
-              height: 100.h,
-              width: 160.w,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image.asset(
-                    "asset/image/logo.png",
-                    height: 60.h,
-                  ),
-                  Text(
-                    "알림장",
-                    style: TextStyle(fontSize: 20.sp),
-                  )
-                ],
-              )),
-          Container(
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(15)),
-                  border: Border.all(width: 2, color: Colors.black12)),
-              height: 100.h,
-              width: 160.w,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image.asset(
-                    "asset/image/logo.png",
-                    height: 60.h,
-                  ),
-                  Text(
-                    "프로필 관리",
-                    style: TextStyle(fontSize: 20.sp),
-                  )
-                ],
-              ))
+          MainButton(buttontext: "알림장"),
+          MainButton(buttontext: "프로필관리"),
         ],
       ),
       ElevatedButton(

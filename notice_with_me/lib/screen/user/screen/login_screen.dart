@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:notice_with_me/screen/every/css.dart';
+import 'package:notice_with_me/screen/user/screen/register.dart';
 
 import '../component/input_text.dart';
 
@@ -9,6 +10,9 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController inputid=TextEditingController();
+    final TextEditingController inputpassword=TextEditingController();
+
     return MainSetting(
       widgets: [
         MainTitle(heights: 60, widths: 260),
@@ -30,15 +34,32 @@ class LoginScreen extends StatelessWidget {
                 style: TextStyle(fontSize: 30.sp, fontWeight: FontWeight.w700),
               ),
               SizedBox(height: 20.h),
-              InputText(hinttexts: "아이디"),
+              TextField(
+                controller: inputid,
+    decoration: InputDecoration(
+    enabledBorder:
+    UnderlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+    hintText: "아이디",
+    hintStyle: TextStyle(fontSize: 17.sp)),
+    ),
               SizedBox(height: 50.h),
-              InputText(hinttexts: "비밀번호"),
+    TextField(
+      controller: inputpassword,
+    decoration: InputDecoration(
+    enabledBorder:
+    UnderlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+    hintText: "비밀번호",
+    hintStyle: TextStyle(fontSize: 17.sp)),
+    ),
               SizedBox(height: 20.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   OutlinedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      print(inputid.text);
+                      print(inputpassword.text);
+                    },
                     child: Text("로그인",
                         style: TextStyle(
                             fontSize: 16.sp, fontWeight: FontWeight.w600)),
@@ -57,7 +78,10 @@ class LoginScreen extends StatelessWidget {
                   ),
                   SizedBox(width: 10.w),
                   OutlinedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => RegisterScreen()));
+                    },
                     child: Text("회원가입",
                         style: TextStyle(
                             fontSize: 16.sp, fontWeight: FontWeight.w600)),
@@ -78,14 +102,6 @@ class LoginScreen extends StatelessWidget {
               )
             ]),
           ),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextButton(onPressed: () {}, child: Text("d")),
-            TextButton(onPressed: () {}, child: Text("d")),
-            TextButton(onPressed: () {}, child: Text("d")),
-          ],
         ),
         ElevatedButton(
             onPressed: () => Navigator.of(context).pop(), child: Text("")),

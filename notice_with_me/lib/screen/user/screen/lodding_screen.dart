@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:notice_with_me/screen/every/css.dart';
+import 'package:notice_with_me/screen/home_screen.dart';
+import 'package:notice_with_me/screen/user/screen/login_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoddingScreen extends StatelessWidget {
   const LoddingScreen({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MainSetting(
@@ -25,7 +27,18 @@ class LoddingScreen extends StatelessWidget {
         ),
         SizedBox(height: 50.h),
         OutlinedButton(
-          onPressed: () {},
+          onPressed: () async {
+            final SharedPreferences prefs = await SharedPreferences.getInstance();
+            final String? nema= await prefs.getString('name');
+            if(nema==null){ //저장된 이름이 없음=로그인, 또는 회원가입.
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()));
+            }
+            else{
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => HomeScreen()));
+            }
+          },
           child: Text("시작하기",
               style: TextStyle(fontSize: 25.sp, fontWeight: FontWeight.w600)),
           style: OutlinedButton.styleFrom(

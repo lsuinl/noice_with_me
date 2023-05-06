@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:notice_with_me/screen/user/screen/agree_screen.dart';
 import 'package:notice_with_me/screen/home_screen.dart';
 import 'package:notice_with_me/screen/user/screen/lodding_screen.dart';
 import 'package:notice_with_me/screen/user/screen/login_screen.dart';
@@ -25,10 +24,6 @@ class moving extends StatelessWidget {
               onPressed: () => Navigator.push(context,
                   MaterialPageRoute(builder: (context) => LoginScreen())),
               child: Text("로그인화면")),
-          ElevatedButton(
-              onPressed: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => AgreeScreen())),
-              child: Text("약관동의")),
           ElevatedButton(
               onPressed: () => Navigator.push(context,
                   MaterialPageRoute(builder: (context) => RegisterScreen())),
