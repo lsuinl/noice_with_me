@@ -102,15 +102,15 @@ class HomeScreen extends StatelessWidget {
       ),
       SizedBox(height: 10.h),
       Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           MainButton(buttontext: "질문함"),
           MainButton(buttontext: "도장판"),
         ],
       ),
-      SizedBox(height: 20.h),
+      SizedBox(height: 10.h),
       Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           MainButton(buttontext: "알림장"),
           MainButton(buttontext: "프로필관리"),

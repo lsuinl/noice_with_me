@@ -10,13 +10,21 @@ class MainButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return TextButton(onPressed: (){
+      print("d");
+    },
+        style: TextButton.styleFrom(
+          minimumSize: Size.zero,
+          padding: EdgeInsets.zero
+        ),
+        child:
+      Container(
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(15)),
             border: Border.all(width: 2, color: Colors.black12)),
         height: 100.h,
-        width: 160.w,
+        width: 155.w,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -26,9 +34,9 @@ class MainButton extends StatelessWidget {
             ),
             Text(
               buttontext,
-              style: TextStyle(fontSize: 20.sp),
+              style: TextStyle(fontSize: 20.sp,color: Colors.black),
             )
           ],
-        ));
+        )));
   }
 }

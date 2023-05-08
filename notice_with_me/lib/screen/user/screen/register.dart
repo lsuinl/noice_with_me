@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:notice_with_me/screen/home_screen.dart';
 import 'package:notice_with_me/screen/user/component/input_text.dart';
 
 import '../../every/css.dart';
@@ -181,6 +182,29 @@ class _RegisterScreenState extends State<RegisterScreen> {
         SizedBox(height: 15.h),
         OutlinedButton(
           onPressed: () {
+            if(inputname.text==""){
+              print("이름을 입력해주세요");
+            }
+            else if(inputemail.text==""|| inputemail.text.contains("@")==false){
+              print("올바른 이메일을 입력해주세요");
+            }
+            else if(inputpassword.text==""||inputpasswordcheck.text==""||inputpasswordcheck.text!=inputpassword.text){
+              print("비밀번호를 다시 확인해주세요");
+            }
+            else if(inputschool.text==""){
+              print("학교를 입력해주세요");
+            }
+            else if(inputphone.text==""){
+              print("전화번호를 입력해주세요");
+            }
+            else if(DateTime.now().difference(selectedDate).inDays<2700){
+              print("초등학생 이상만 이용가능합니다. 정확한 생년월일을 입력해주세요"); //부모. 아이 구분해서..
+            }
+            else{
+              print("완료");
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => HomeScreen()));
+            }
             print(inputname.text);
             print(inputemail.text);
             print(inputpassword.text);
