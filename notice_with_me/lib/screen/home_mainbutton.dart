@@ -3,16 +3,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MainButton extends StatelessWidget {
   final String buttontext;
+  final VoidCallback movingscreen;
+  final String image;
 
   const MainButton({
     required this.buttontext,
+    required this.movingscreen,
+    required this.image,
     Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(onPressed: (){
-      print("d");
-    },
+    return TextButton(onPressed: movingscreen,
         style: TextButton.styleFrom(
           minimumSize: Size.zero,
           padding: EdgeInsets.zero
@@ -28,10 +30,7 @@ class MainButton extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Image.asset(
-              "asset/image/logo.png",
-              height: 60.h,
-            ),
+            Image.asset('asset/image/${image}.png', width: 70.w,),
             Text(
               buttontext,
               style: TextStyle(fontSize: 20.sp,color: Colors.black),

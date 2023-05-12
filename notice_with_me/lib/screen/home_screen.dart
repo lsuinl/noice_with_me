@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:notice_with_me/screen/home_mainbutton.dart';
+import 'package:notice_with_me/screen/perform/user_information_screen.dart';
 
 import 'every/css.dart';
 
@@ -9,6 +10,14 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MoveToQuestion()=>Navigator.push(context,
+        MaterialPageRoute(builder: (context) => HomeScreen()));
+    MoveToStamp()=>Navigator.push(context,
+        MaterialPageRoute(builder: (context) => HomeScreen()));
+    MoveToNotice()=>Navigator.push(context,
+        MaterialPageRoute(builder: (context) => HomeScreen()));
+    MoveToUserInformation()=>Navigator.push(context,
+        MaterialPageRoute(builder: (context) => UserInformationScreen()));
     return MainSetting(widgets: [
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -18,8 +27,8 @@ class HomeScreen extends StatelessWidget {
             style: TextStyle(fontSize: 25.sp, fontWeight: FontWeight.w800),
           ),
           Image.asset(
-            "asset/image/logo.png",
-            width: 50,
+            "asset/image/head.png",
+            width: 90.w,
             fit: BoxFit.fill,
           )
         ],
@@ -96,7 +105,7 @@ class HomeScreen extends StatelessWidget {
             primary: Color(0xFF000000),
             side: BorderSide(
               // 테두리 바꾸는 속성
-              color: Color(0xFFFDDE8E),
+              color: Color(0xFFFFFFFF),
               width: 2.0,
             )),
       ),
@@ -104,20 +113,21 @@ class HomeScreen extends StatelessWidget {
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          MainButton(buttontext: "질문함"),
-          MainButton(buttontext: "도장판"),
+          MainButton(buttontext: "질문함", movingscreen: MoveToQuestion,image: 'question'),
+          MainButton(buttontext: "도장판",movingscreen: MoveToStamp,image: 'stamp'),
         ],
       ),
       SizedBox(height: 10.h),
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          MainButton(buttontext: "알림장"),
-          MainButton(buttontext: "프로필관리"),
+          MainButton(buttontext: "알림장",movingscreen: MoveToNotice,image: 'notice'),
+          MainButton(buttontext: "프로필관리",movingscreen: MoveToUserInformation,image: 'information'),
         ],
       ),
       ElevatedButton(
           onPressed: () => Navigator.of(context).pop(), child: Text("")),
     ]);
+
   }
 }

@@ -11,7 +11,7 @@ class LoddingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MainSetting(
       widgets: [
-        MainTitle(widths: 300, heights: 80),
+        MainTitle(widths: 320, heights: 80),
         SizedBox(height: 15.h),
         Text(
           "아이와 소통할 수 있는 알림장 도우미어플",
@@ -22,7 +22,7 @@ class LoddingScreen extends StatelessWidget {
         ),
         SizedBox(height: 30.h),
         Image.asset(
-          'asset/image/logo.png',
+          '/Users/kimsu-in/Desktop/icecream/sw/notice_with_me/asset/image/mainlogo.png',
           height: 240.h,
         ),
         SizedBox(height: 50.h),

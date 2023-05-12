@@ -46,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 decoration: InputDecoration(
                     enabledBorder:
                     UnderlineInputBorder(borderSide: BorderSide(color: Colors.black)),
-                    hintText: "아이디",
+                    hintText: "이메일",
                     hintStyle: TextStyle(fontSize: 17.sp)),
               ),
               SizedBox(height: 50.h),
@@ -58,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     hintText: "비밀번호",
                     hintStyle: TextStyle(fontSize: 17.sp)),
               ),
-             inputcheck ? Text("아이디와 비밀번호를 다시 확인하세요", style: TextStyle(color: Colors.red)) :SizedBox(height: 18.h.h),
+             inputcheck ? Text("아이디와 비밀번호를 다시 확인하세요", style: TextStyle(color: Colors.red)) :Text(""),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -81,7 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         style: TextStyle(
                             fontSize: 16.sp, fontWeight: FontWeight.w600)),
                     style: OutlinedButton.styleFrom(
-                        minimumSize: Size(82.w, 27.h),
+                        minimumSize: Size(90.w, 27.h),
                         shape: const RoundedRectangleBorder(
                             borderRadius:
                             BorderRadius.all(Radius.circular(10))),
@@ -93,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           width: 5.0,
                         )),
                   ),
-                  SizedBox(width: 10.w),
+                  SizedBox(width: 20.w),
                   OutlinedButton(
                     onPressed: () {
                         Navigator.push(context,
@@ -104,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         style: TextStyle(
                             fontSize: 16.sp, fontWeight: FontWeight.w600)),
                     style: OutlinedButton.styleFrom(
-                        minimumSize: Size(82.w, 27.h),
+                        minimumSize: Size(90.w, 27.h),
                         shape: const RoundedRectangleBorder(
                             borderRadius:
                             BorderRadius.all(Radius.circular(10))),
